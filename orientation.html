@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>device orientation test</title>
+	</head>
+	<body>
+		<h1>device orientation tests</h1>
+		<span id="status">ready</span><br>
+		<input type="text" id="alpha">
+		<input type="text" id="beta">
+		<input type="text" id="gamma">
+	
+		<script>
+			if(window.DeviceOrientationEvent){
+				window.addEventListener('deviceorientation', devMotionHandler, false);
+				console.log("supported");
+				status.innerHTML = "DeviceMotion supported";
+			} else {
+				console.log("not supported");
+				status.innerHTML = "DeviceMotion not supported";
+			}
+
+			function devMotionHandler(eventData){
+				alpha.value = Math.round(eventData.alpha);
+				beta.value = Math.round(eventData.beta);
+				gamma.value = Math.round(eventData.gamma);
+			}
+			
+		</script>
+	</body>
+</html>
