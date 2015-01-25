@@ -11,7 +11,7 @@
 	
 		<script>
 			if(window.DeviceOrientationEvent){
-				window.addEventListener('deviceorientation', devMotionHandler, false);
+				window.addEventListener('deviceorientation', devOrientationHandler, false);
 				console.log("supported");
 				status.innerHTML = "DeviceMotion supported";
 			} else {
